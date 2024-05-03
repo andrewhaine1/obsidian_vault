@@ -1,0 +1,12 @@
+Show what's consuming disk space
+```
+du -cha --max-depth=1 / | grep -E "M|G"
+```
+```
+du -cha --max-depth=1 /var/lib/docker | grep -E "M|G"
+```
+
+Delete all folders in dir except 2
+```
+ls | grep -v -e live -e stream | xargs sudo rm -rf
+```
