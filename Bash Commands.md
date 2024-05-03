@@ -11,4 +11,10 @@ Delete all folders in dir except 2
 ls | grep -v -e live -e stream | xargs sudo rm -rf
 ```
 List folders newest first
-```ls -t```
+```
+ls -t
+```
+or
+```
+ll -t
+```
