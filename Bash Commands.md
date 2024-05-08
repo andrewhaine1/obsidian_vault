@@ -27,3 +27,7 @@ Delete all folders from December
 ```
 ls -lt | awk '$6 == "Dec" && $7 >=01 && $7 <= 31 {print $9}' | xargs sudo rm -rf
 ```
+Find largest 10 directories
+```
+du -a /var | sort -n -r | head -n 10
+```
