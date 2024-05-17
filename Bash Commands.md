@@ -31,3 +31,18 @@ Find largest 10 directories
 ```
 du -a /var | sort -n -r | head -n 10
 ```
+
+find file and silence errors
+```
+find / -type f -name sqlpackage 2>/dev/null
+```
+
+To create a new symlink (will fail if symlink exists already):
+```
+ln -s /path/to/file /path/to/symlink
+```
+
+To create or update a symlink:
+```
+ln -sf /path/to/file /path/to/symlink
+```
