@@ -46,3 +46,7 @@ To create or update a symlink:
 ```
 ln -sf /path/to/file /path/to/symlink
 ```
+List directory contents - biggest first
+```
+du -sh * | sort -hr
+```
