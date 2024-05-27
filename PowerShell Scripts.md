@@ -1,5 +1,6 @@
 # How to get a WSL distribution size from the Windows command line
 
+```
 Get-ChildItem "HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss" -Recurse |
 ForEach-Object {
     $distro_name = ($_ | Get-ItemProperty -Name DistributionName).DistributionName
@@ -22,3 +23,4 @@ ForEach-Object {
     $distro_size = "{0:N0} MB" -f ((Get-ChildItem -Recurse -LiteralPath "$distro_dir" | Measure-Object -Property Length -sum).sum / 1Mb)
     Write-Output "Size: $distro_size"
 }
+```
