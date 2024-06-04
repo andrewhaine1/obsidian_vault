@@ -47,3 +47,11 @@ Docker remove dangling images
 ```
 docker rmi $(sudo docker images -f "dangling=true" -q)
 ```
+
+Change file line endings for docker script execution
+Common issue on Windows - just change line endings.
+Open terminal eq. git bash
+```
+Run dos2unix ./* to convert line endings
+```
+Rebuild and restart docker image
