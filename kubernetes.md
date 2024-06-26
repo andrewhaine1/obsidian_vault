@@ -19,6 +19,11 @@ Set default namespace
 kubectl config set-context --current --namespace=my-namespace
 ```
 
+Show current namespace
+```
+kubectl config view --minify -o jsonpath='{..namespace}'
+```
+
 ## Kubernetes Basic Deployment
 
 ### Create Ingress Controller
