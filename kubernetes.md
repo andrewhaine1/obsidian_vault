@@ -14,6 +14,11 @@ kubectl config unset contexts.aws_cluster1-kubernetes
 kubectl config unset clusters.foobar-baz
 ```
 
+Set default namespace
+```
+kubectl config set-context --current --namespace=my-namespace
+```
+
 ## Kubernetes Basic Deployment
 
 ### Create Ingress Controller
