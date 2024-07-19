@@ -59,3 +59,9 @@ The below command creates an ingress rule in the timekeeper namespace which will
 The below command updates the timekeeper deployment from the first section from tag 0.0.1 to 0.0.2
 
 `kubectl set image deployment/timekeeper timekeeper=timekeeper:0.0.2 --namespace timekeeper`
+
+Get pod and sidecar logs
+
+```
+kubectl logs order-service-749559957b-z9gkc -c wait-for-rabbitmq
+```
