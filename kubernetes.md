@@ -60,6 +60,8 @@ The below command updates the timekeeper deployment from the first section from 
 
 `kubectl set image deployment/timekeeper timekeeper=timekeeper:0.0.2 --namespace timekeeper`
 
+### Logs
+
 Get pod and sidecar logs
 
 ```
