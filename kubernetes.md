@@ -67,3 +67,9 @@ Get pod and sidecar logs
 ```
 kubectl logs order-service-749559957b-z9gkc -c wait-for-rabbitmq
 ```
+
+Decode default (any) service account token
+
+```
+jq -R 'split(".") | select(length > 0) | .[0],.[1] | @base64d | fromjson' <<< $(kubectl exec -it eshop-apigwws-7ffbb9578d-h65vg -- cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+```
