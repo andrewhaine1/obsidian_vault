@@ -73,3 +73,10 @@ Decode default (any) service account token
 ```
 jq -R 'split(".") | select(length > 0) | .[0],.[1] | @base64d | fromjson' <<< $(kubectl exec -it eshop-apigwws-7ffbb9578d-h65vg -- cat /var/run/secrets/kubernetes.io/serviceaccount/token)
 ```
+
+### Show what's stuck in terminating namespace
+
+```
+kubectl api-resources --verbs=list --namespaced -o name \
+  | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
+```
