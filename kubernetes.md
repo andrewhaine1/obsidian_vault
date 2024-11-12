@@ -80,3 +80,13 @@ jq -R 'split(".") | select(length > 0) | .[0],.[1] | @base64d | fromjson' <<< $(
 kubectl api-resources --verbs=list --namespaced -o name \
   | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
 ```
+
+# Delete stuck namespaces
+```
+kubectl proxy
+```
+```
+kubectl get ns delete-me -o json | \
+  jq '.spec.finalizers=[]' | \
+  curl -X PUT http://localhost:8001/api/v1/namespaces/delete-me/finalize -H "Content-Type: application/json" --data @-
+```
