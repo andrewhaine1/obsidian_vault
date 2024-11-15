@@ -26,6 +26,12 @@ kubectl config view --minify -o jsonpath='{..namespace}'
 
 ## Kubernetes Basic Deployment
 
+### Create Ubuntu Container
+
+```
+k run ubuntu --image=ubunti:latest --restart=Never --command sleep infinity
+```
+
 ### Create Ingress Controller
 
 `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml`
