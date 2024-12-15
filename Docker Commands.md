@@ -43,6 +43,11 @@ Docker ps names, ids, and images
 docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}"
 ```
 
+Docker container ls format table
+```
+docker container ls --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}'
+```
+
 Docker remove dangling images
 ```
 docker rmi $(sudo docker images -f "dangling=true" -q)
