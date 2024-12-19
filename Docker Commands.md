@@ -60,3 +60,8 @@ Open terminal eq. git bash
 Run dos2unix ./* to convert line endings
 ```
 Rebuild and restart docker image
+
+Import repos for microk8s
+```
+for repo in $(docker image ls --format '{{.Repository}}');do imagename=${repo#*/};docker save $repo > "$imagename.tar";microk8s ctr image import "$imagename.tar";done
+```
