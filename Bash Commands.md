@@ -1,6 +1,6 @@
 Show what's consuming disk space
 ```
-du -cha --max-depth=1 / | grep -E "M|G" | sort -hr
+du -cha --max-depth=1 / 2>/dev/null | grep -E "M|G" | sort -hr
 ```
 ```
 du -cha --max-depth=1 /var/lib/docker | grep -E "M|G"
